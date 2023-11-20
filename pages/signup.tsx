@@ -48,7 +48,7 @@ const Signup = () => {
 
             setForm(initialState);
           }}
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none"
+          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none mb-2"
         >
           Sign up
         </button>
@@ -62,7 +62,7 @@ const Signup = () => {
             if (error) alert(error.message);
             else router.push("/");
           }}
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none"
+          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none mt-2"
         >
           Sign In
         </button>

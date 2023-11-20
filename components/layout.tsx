@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import Navbar from './navbar';
 import Footer from './Footer';
-
+import { Session } from '@supabase/supabase-js';
 
 
 interface LayoutProps {
