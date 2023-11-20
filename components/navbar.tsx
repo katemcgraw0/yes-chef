@@ -16,7 +16,7 @@ const Navbar = () => {
       try {
         const session = await supabase.auth.getSession();
         if (session) {
-          console.log("here")
+          setLoggedIn(true);
           console.log(loggedIn);
         }
         else{
@@ -46,18 +46,21 @@ const Navbar = () => {
   return (
     loggedIn ? (
       <div className="flex w-full">
-        <div className="flex w-full flex-row items-center justify-center h-16 bg-gray-200 px-20">
-          <button className={`px-4 py-2 ${router.pathname === '/' ? 'bg-blue-500 text-white' : 'bg-gray-300'} rounded-md`}>
-            <Link href="/">Feed</Link>
+      <div className="flex w-full flex-row items-center justify-center bg-gray-200 px-20 h-full">
+        <button className={`px-4 py-2 ${router.pathname === '/' ? 'bg-blue-500 text-white' : 'bg-gray-300'} rounded-md flex items-center`}>
+          <Link href="/">
+            <img src="/cookbook.png" alt="Feed" className="w-6 h-6" />
+          </Link>
+        </button>
+    
+        <div className="ml-2 flex items-center">
+          <button className={`px-4 py-2 text-4xl ${router.pathname === '/profile' ? 'bg-green-500 text-white' : 'bg-gray-300'} rounded-md`}>
+            <Link href="/profile">👩🏻‍🍳</Link>
           </button>
-  
-          <div className="ml-2">
-            <button className={`px-4 py-2 ${router.pathname === '/profile' ? 'bg-green-500 text-white' : 'bg-gray-300'} rounded-md`}>
-              <Link href="/profile">Profile</Link>
-            </button>
-          </div>
         </div>
       </div>
+    </div>
+
     ) : null
   );
 }
